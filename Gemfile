@@ -11,6 +11,11 @@ gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
 
+gem 'awesome_rails_console' #rails console好閱讀
+
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
