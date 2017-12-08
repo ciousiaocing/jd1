@@ -18,7 +18,7 @@ class Cart < ApplicationRecord
     # end
     # sum
 
-    cart_items.reduce(0){|sum, cart_item| sum+= cart_item.quantity * cart_item.product.price}
+    cart_items.reduce(0){|sum, cart_item| sum + cart_item.quantity * cart_item.product.price}
   end
 
   def clean!
