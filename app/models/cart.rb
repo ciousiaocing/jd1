@@ -20,4 +20,8 @@ class Cart < ApplicationRecord
 
     cart_items.reduce(0){|sum, cart_item| sum+= cart_item.quantity * cart_item.product.price}
   end
+
+  def clean!
+    cart_items.destroy_all
+  end
 end
