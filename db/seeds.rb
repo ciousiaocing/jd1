@@ -21,3 +21,32 @@ u.password = "123456"
 u.password_confirmation = "123456"
 u.is_admin = false
 u.save
+
+# Initialize Product
+Product.create!(title: "比利時1",
+  description: "比利時巧克力",
+  price: 100,
+  quantity: 10,
+  image: open("https://johnlewis.scene7.com/is/image/JohnLewis/231834314alt1?$prod_main$")
+  )
+
+  Product.create!(title: "比利時2",
+    description: "比利時巧克力2",
+    price: 200,
+    quantity: 20,
+    image: open("http://www.qklnews.com/uploadfile/2009/0614/20090614010359716.jpg")
+    )
+
+  Product.create!(title: "韓國",
+    description: "韓國巧克力",
+    price: 50,
+    quantity: 25,
+    image: open("https://gw.alicdn.com/bao/uploaded/i6/T1zGtJXf8IXXc3jyna_121436.jpg_460x460xz.jpg")
+    )
+
+  Product.create!(title: "韓國2",
+    description: "韓國巧克力2",
+    price: 40,
+    quantity: 40,
+    image: open("https://tshop.r10s.com/243/9c9/dc96/c07a/b06b/4018/2ea5/1122e5b190005056b72487.jpg?_ex=330x330")
+    )
