@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'acts_as_list'
+gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
