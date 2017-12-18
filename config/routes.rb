@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :orders do
     member do
-      post :pay_with_braintree
+      post :checkout_with_braintree
     end
   end
 
