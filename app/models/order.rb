@@ -9,6 +9,33 @@ class Order < ApplicationRecord
 
   before_create :generate_token
 
+  include AASM
+
+  aasm column: :state do
+    state :pending, initial: true
+    state :paid, :shipping, :delivered, :returened, :refunded
+
+    event :make_payment do
+      transitions from: :pending, to: :paid
+    end
+
+    event :ship do
+      transitions from: :paid, to: :shipping
+    end
+
+    event :delivering do
+      transitions from: :shipping, to: :delivered
+    end
+
+    event :return do
+      transitions from: [:shipping, :delivered], to: :returened
+    end
+
+    event :refund do
+      transitions from: [:paid, :returened], to: :refunded
+    end
+  end
+
   def generate_token
     self.token = SecureRandom.uuid
   end

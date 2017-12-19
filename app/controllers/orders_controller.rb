@@ -35,11 +35,6 @@ class OrdersController < ApplicationController
     @order.set_payment_with!("braintree")
 
     #刷卡
-    # payment = BraintreeService.new(params[:payment_method_nonce], current_cart.total_price)
-    # result = payment.run
-    # if result.success?
-    #   @order.pay!
-    # end
     if @order
       nonce = params[:payment_method_nonce]
 
@@ -50,7 +45,7 @@ class OrdersController < ApplicationController
 
       if result
         redirect_to order_path(@order.token), notice: "braintree完成付款"
-        @order.pay!
+        @order.make_payment!
         current_cart.clean!
 
       else
