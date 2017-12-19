@@ -13,4 +13,5 @@
 //= require rails-ujs
 //= require jquery
 //= require bootstrap/dropdown
+//= require autosize.min
 //= require_tree .
