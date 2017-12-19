@@ -32,4 +32,12 @@ $(document).ready(function(){
   })
   //index carousel picture
   $('#myCarousel').carousel({interval: 2000});
+  $('#start-buy').click(function(){
+    $('html, body').scrollTop(600);
+  })
+
+  //product.index
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 })
