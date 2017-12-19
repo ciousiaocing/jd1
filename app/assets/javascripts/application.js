@@ -16,6 +16,7 @@
 //= require autosize.min
 //= require jquery.countdown.min
 //= require wow.min
+//= require bootstrap/carousel
 //= require_tree .
 
 $(document).ready(function(){
@@ -29,4 +30,6 @@ $(document).ready(function(){
       $('#navbar').removeClass('show_bgcolor')
     }
   })
+  //index carousel picture
+  $('#myCarousel').carousel({interval: 2000});
 })

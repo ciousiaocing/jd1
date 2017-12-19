@@ -18,11 +18,33 @@
 @import "bootstrap";
 @import "font-awesome";
 
+//body
+body {
+  background-color: #000;
+}
+
 // navbar
-.navbar-default {
+.navbar-inverse {
   background: rgba(0,0,0,0.3);
+  .navbar-brand {
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    a {
+      margin-left: 30px;
+    }
+  }
+
 
   &.show_bgcolor {
-    background-color: #0206a1;
+    background-color: #663300;
+
+  }
+}
+
+//carousel
+.carousel-inner > .item {
+  text-align: center;
+  img {
+    margin: 0 auto;
   }
 }
