@@ -13,6 +13,7 @@ class Admin::OrdersController < ApplicationController
 
   def ship
     @order = Order.find_by(id: params[:id])
+    OrderMailer.notify_ship(@order).deliver!
     @order.ship!
     redirect_back(fallback_location: root_path)
   end
