@@ -20,4 +20,13 @@
 
 $(document).ready(function(){
   new WOW().init();
+
+  //navbar
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 125) {
+      $('#navbar').addClass('show_bgcolor')
+    } else {
+      $('#navbar').removeClass('show_bgcolor')
+    }
+  })
 })

@@ -17,3 +17,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+// navbar
+.navbar-default {
+  background: rgba(0,0,0,0.3);
+
+  &.show_bgcolor {
+    background-color: #0206a1;
+  }
+}
