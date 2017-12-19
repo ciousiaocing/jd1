@@ -62,6 +62,13 @@ class OrdersController < ApplicationController
 
   end
 
+  def apply_to_cancel
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.apply_cancel(@order).delivering!
+    flash[:notice] = "已提交申請"
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def order_params

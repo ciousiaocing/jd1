@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :orders do
     member do
       post :checkout_with_braintree
+      post :apply_to_cancel
     end
   end
 
