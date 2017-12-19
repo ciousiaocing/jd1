@@ -21,7 +21,6 @@
 //body
 body {
   background-color: #000;
-  color: #fff;
 }
 
 // navbar
@@ -56,11 +55,17 @@ body {
   background: #FFF;
   margin-bottom:12px;
 }
-
+.col-item .options {
+  position:absolute;
+  top:6px;
+  right:22px;
+}
 .col-item .photo {
   overflow: hidden;
 }
-
+.col-item .photo .options {
+  display:none;
+}
 .col-item .photo img {
   margin: 0 auto;
   width: 100%;
@@ -170,4 +175,9 @@ body {
 }
 .col-item .btn-details a:first-child {
   margin-right:12px;
+}
+
+//sign up
+p.help-block {
+  color: #F4D121;
 }

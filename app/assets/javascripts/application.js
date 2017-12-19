@@ -24,7 +24,7 @@ $(document).ready(function(){
 
   //navbar
   $(window).scroll(function(){
-    if ($(this).scrollTop() > 125) {
+    if ($(this).scrollTop() > 500) {
       $('#navbar').addClass('show_bgcolor')
     } else {
       $('#navbar').removeClass('show_bgcolor')
