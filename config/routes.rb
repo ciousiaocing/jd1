@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :collections
   end
 
   resources :carts do
@@ -44,6 +45,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :collect
+      post :discollect
     end
   end
 

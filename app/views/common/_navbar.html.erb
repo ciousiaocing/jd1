@@ -32,6 +32,7 @@
                 <li><%= link_to("Admin Panel", admin_products_path) %></li>
               <% end %>
               <li><%= link_to("個人訂單列表", account_orders_path) %></li>
+              <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-star"), account_collections_path )%></li>
               <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>

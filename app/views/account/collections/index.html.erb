@@ -1,0 +1,40 @@
+<div style="margin-top: 30px;">
+<% @products.each do |product| %>
+
+  <div class="col-sm-3">
+
+      <article class="col-item" style="margin-bottom: 40px;border-radius: 10px;">
+      	<div class="photo">
+  			<div class="options-cart-round">
+  				<button class="btn btn-default" title="Add to cart">
+  					<!-- <span class="fa fa-shopping-cart"></span> -->
+            <%= link_to add_to_cart_product_path(product), method: :post do  %>
+              <span class="fa fa-shopping-cart"> </span>
+            <% end %>
+  				</button>
+  			</div>
+
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", class: " img-responsive center-block") %>
+          <% end %>
+        <% end %>
+
+  		</div>
+  		<div class="info">
+  			<div class="row">
+  				<div class="price-details col-md-6">
+  					<p class="details">
+  						<%= product.description %>
+  					</p>
+  					<h1><%= product.title %></h1>
+  					<span class="price-new">$ <%= product.price %></span>
+  				</div>
+  			</div>
+  		</div>
+  	</article>
+  </div>
+<% end %>
+</div>

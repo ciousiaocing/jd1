@@ -38,7 +38,7 @@ div{
 			<span class="color green"></span>
 			<span class="color blue"></span>
 		</h5> -->
-		<div class="action" style="margin-top: 100px;">
+		<div class="action col-md-6" style="margin-top: 100px;">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to add_to_cart_product_path(@product), method: :post, class: "btn btn-primary btn-danger btn-lg" do %>
         購物車 <i class="fa fa-shopping-cart"> </i>
@@ -47,12 +47,20 @@ div{
         已銷售一空，無法購買
       <% end %>
 
-			<button class="like btn btn-default" type="button" style="margin-left:30px;"><span class="fa fa-heart"></span></button>
+			<!-- <button class="like btn btn-default" type="button" style="margin-left:30px;"><span class="fa fa-heart"></span></button> -->
+
+      <div class="pull-right">
+        <% if current_user && current_user.has_collected?(@product) %>
+          <%= link_to("取消收藏", discollect_product_path(@product), method: :post, class: "btn btn-default")  %>
+        <% else %>
+          <%= link_to("收藏", collect_product_path(@product), method: :post, class: "btn btn-default")  %>
+        <% end %>
+      </div>
 		</div>
 	</div>
 
 
-<div style="position: absolute;bottom: 60px;margin: auto;background-color: #FA0964;padding:10px 20px;">
+<div style="position: absolute;bottom: 60px;right: 50px;margin: auto;background-color: #FA0964;padding:10px 20px;">
 特價下殺僅剩 <div id="getting-started"></div>
 </div>
 

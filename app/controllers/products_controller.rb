@@ -21,4 +21,30 @@ class ProductsController < ApplicationController
 
     redirect_to product_path
   end
+
+  def collect
+    @product = Product.find(params[:id])
+
+    if !current_user.has_collected?(@product)
+      current_user.collect!(@product)
+      flash[:notice] = "You've successfully collected the skill!"
+    else
+      flash[:warning] = "You've already collected the skill!"
+    end
+
+    redirect_to product_path(@product)
+  end
+
+  def discollect
+    @product = Product.find(params[:id])
+
+    if current_user.has_collected?(@product)
+      current_user.discollect!(@product)
+      flash[:alert] = "You've successfully discollected the skill!"
+    else
+      flash[:warning] = "You haven't collected the skill yet!"
+    end
+
+    redirect_to product_path(@product)
+  end
 end
