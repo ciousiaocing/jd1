@@ -1,0 +1,35 @@
+<div style="padding: 10px;float: right;">
+  <% case order.state %>
+  <% when "paid" %>
+    <%= link_to("退款",
+                refund_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+    <%= link_to("出貨",
+                ship_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "shipping" %>
+    <%= link_to("到貨",
+                delivering_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+    <%= link_to("退貨",
+                return_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "delivered" %>
+    <%= link_to("退貨",
+                return_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "returned" %>
+    <%= link_to("退款",
+                refund_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "refunded" %>
+    <span class="label label-default">已退款</span>
+
+  <% end %>
+</div>

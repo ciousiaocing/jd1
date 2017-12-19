@@ -13,9 +13,9 @@ class Order < ApplicationRecord
 
   aasm column: :state do
     state :pending, initial: true
-    state :paid, :shipping, :delivered, :returened, :refunded
+    state :paid, :shipping, :delivered, :returned, :refunded
 
-    event :make_payment do
+    event :make_payment, after_commit: :pay! do
       transitions from: :pending, to: :paid
     end
 
@@ -28,11 +28,11 @@ class Order < ApplicationRecord
     end
 
     event :return do
-      transitions from: [:shipping, :delivered], to: :returened
+      transitions from: [:shipping, :delivered], to: :returned
     end
 
     event :refund do
-      transitions from: [:paid, :returened], to: :refunded
+      transitions from: [:paid, :returned], to: :refunded
     end
   end
 
