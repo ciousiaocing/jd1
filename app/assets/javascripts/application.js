@@ -14,4 +14,5 @@
 //= require jquery
 //= require bootstrap/dropdown
 //= require autosize.min
+//= require jquery.countdown.min
 //= require_tree .
