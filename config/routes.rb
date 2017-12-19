@@ -23,7 +23,12 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :orders
+    resources :orders do
+      post :ship
+      post :delivering
+      post :return
+      post :refund
+    end
 
     resources :products do
       member do
