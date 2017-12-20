@@ -25,7 +25,7 @@ Product.create!(title: "比利時1",
   price: 100,
   quantity: 10,
   category_id: 1,
-  image: open("https://johnlewis.scene7.com/is/image/JohnLewis/231834314alt1?$prod_main$")
+  image: open("app/assets/images/b1.jpeg")
   )
 
   Product.create!(title: "比利時2",
@@ -33,7 +33,7 @@ Product.create!(title: "比利時1",
     price: 200,
     quantity: 20,
     category_id: 1,
-    image: open("http://www.qklnews.com/uploadfile/2009/0614/20090614010359716.jpg")
+    image: open("app/assets/images/b2.jpeg")
     )
 
   Product.create!(title: "韓國",
@@ -41,7 +41,7 @@ Product.create!(title: "比利時1",
     price: 50,
     quantity: 25,
     category_id: 2,
-    image: open("https://gw.alicdn.com/bao/uploaded/i6/T1zGtJXf8IXXc3jyna_121436.jpg_460x460xz.jpg")
+    image: open("app/assets/images/k1.jpeg")
     )
 
   Product.create!(title: "韓國2",
@@ -49,5 +49,5 @@ Product.create!(title: "比利時1",
     price: 40,
     quantity: 40,
     category_id: 2,
-    image: open("https://tshop.r10s.com/243/9c9/dc96/c07a/b06b/4018/2ea5/1122e5b190005056b72487.jpg?_ex=330x330")
+    image: open("app/assets/images/k2.jpeg")
     )
