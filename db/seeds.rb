@@ -27,7 +27,7 @@ Product.create!(title: "比利時1",
     description: "比利時巧克力2",
     price: 200,
     quantity: 20,
-    image: open("http://www.qklnews.com/uploadfile/2009/0614/20090614010359716.jpg")
+    image: open("https://www.qklnews.com/uploadfile/2009/0614/20090614010359716.jpg")
     )
 
   Product.create!(title: "韓國",
