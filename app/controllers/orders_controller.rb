@@ -44,8 +44,9 @@ class OrdersController < ApplicationController
       )
 
       if result
-        redirect_to order_path(@order.token), notice: "braintree完成付款"
         @order.make_payment!
+
+        redirect_to order_path(@order.token), notice: "braintree完成付款"
         current_cart.clean!
 
         OrderMailer.notify_order_placed(@order).deliver_now
