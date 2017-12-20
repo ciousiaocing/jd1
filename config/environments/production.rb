@@ -102,3 +102,9 @@ Rails.application.configure do
 
 
 end
+
+
+Braintree::Configuration.environment = :production
+Braintree::Configuration.merchant_id = ENV['Braintree::Configuration.merchant_id']
+Braintree::Configuration.public_key = ENV['Braintree::Configuration.public_key']
+Braintree::Configuration.private_key = ENV['Braintree::Configuration.private_key']
