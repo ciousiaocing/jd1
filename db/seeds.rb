@@ -33,7 +33,7 @@ Product.create!(title: "比利時1",
     price: 200,
     quantity: 20,
     category_id: 1,
-    image: open("app/assets/images/b2.jpeg")
+    image: open("app/assets/images/b2.jpg")
     )
 
   Product.create!(title: "韓國",
@@ -41,7 +41,7 @@ Product.create!(title: "比利時1",
     price: 50,
     quantity: 25,
     category_id: 2,
-    image: open("app/assets/images/k1.jpeg")
+    image: open("app/assets/images/k1.jpg")
     )
 
   Product.create!(title: "韓國2",
@@ -49,5 +49,5 @@ Product.create!(title: "比利時1",
     price: 40,
     quantity: 40,
     category_id: 2,
-    image: open("app/assets/images/k2.jpeg")
+    image: open("app/assets/images/k2.jpg")
     )
