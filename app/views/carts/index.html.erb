@@ -1,20 +1,25 @@
+<style>
+  div{
+    color: grey;
+  }
+</style>
 <div class="row">
   <div class="col-md-12">
 
     <%= link_to("清空購物車", clean_carts_path, method: :delete,
-                class: "pull-right",
-                style: "text-decoration: underline;",
+                class: "pull-right btn btn-default",
                 data: {confirm: "你確定要清空整個購物車嗎？"}) %>
 
     <h2>購物車</h2>
 
-    <table class="table table-bordered">
+    <table class="table table-hover table-condensed">
       <thead>
         <tr>
-          <th colspan="2">商品資訊</th>
-          <th>單價</th>
-          <th>數量</th>
-          <th>操作選項</th>
+          <th style="width:30%"商品資訊</th>
+          <th>商品名稱</th>
+          <th style="width:10%">單價</th>
+          <th>數量  <span style="padding-left:100px;">操作選項</span></th>
+
         </tr>
       </thead>
       <tbody>
@@ -32,26 +37,30 @@
             <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
-            <td>
+            <td data-th="Price">
               <%= cart_item.product.price %>
             </td>
-            <td>
+            <td data-th="Quantity">
               <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
                 <%= f.select :quantity, 1..cart_item.product.quantity %>
-                <%= f.submit "更新", data: { disable_with: "Submiting..." } %>
+                <%= f.submit "更新", style: "margin-left: 100px;", data: { disable_with: "Submiting..." } %>
+                <%= link_to cart_item_path(cart_item.product_id), style: "margin-left: 40px;", method: :delete do %>
+                  <i class="fa fa-trash fa-2x"></i>
+                <% end %>
+
               <% end %>
             </td>
-            <td>
+            <!-- <td>
               <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
                 <i class="fa fa-trash"></i>
               <% end %>
-            </td>
+            </td> -->
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <br>
+    <hr>
 
     <div class="total clearfix">
       <span class="pull-right">
@@ -59,7 +68,7 @@
       </span>
     </div>
 
-    <hr>
+<br>
 
     <div class="checkout clearfix">
       <%= link_to("確認結帳", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
