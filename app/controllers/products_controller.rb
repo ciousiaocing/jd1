@@ -27,9 +27,9 @@ class ProductsController < ApplicationController
 
     if !current_user.has_collected?(@product)
       current_user.collect!(@product)
-      flash[:notice] = "You've successfully collected the skill!"
+      flash[:notice] = "收藏成功!"
     else
-      flash[:warning] = "You've already collected the skill!"
+      flash[:warning] = "取消成功!"
     end
 
     redirect_to product_path(@product)
@@ -40,9 +40,9 @@ class ProductsController < ApplicationController
 
     if current_user.has_collected?(@product)
       current_user.discollect!(@product)
-      flash[:alert] = "You've successfully discollected the skill!"
+      flash[:alert] = "取消成功!"
     else
-      flash[:warning] = "You haven't collected the skill yet!"
+      flash[:warning] = "您尚未收藏!"
     end
 
     redirect_to product_path(@product)
