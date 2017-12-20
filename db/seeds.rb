@@ -18,6 +18,7 @@ u.save
 #分類
 Category.create!(name: "比利時")
 Category.create!(name: "韓國")
+Category.create!(name: "日本")
 
 # Initialize Product
 Product.create!(title: "比利時1",
@@ -28,6 +29,23 @@ Product.create!(title: "比利時1",
   image: open("app/assets/images/b1.jpeg")
   )
 
+Product.create!(title: "韓國1",
+  description: "韓國巧克力1",
+  price: 50,
+  quantity: 25,
+  category_id: 2,
+  image: open("app/assets/images/k1.jpg")
+  )
+
+Product.create!(title: "日本1",
+  description: "日本巧克力1",
+  price: 50,
+  quantity: 25,
+  category_id: 2,
+  image: open("app/assets/images/j1.jpg")
+  )
+
+
   Product.create!(title: "比利時2",
     description: "比利時巧克力2",
     price: 200,
@@ -36,13 +54,6 @@ Product.create!(title: "比利時1",
     image: open("app/assets/images/b2.jpg")
     )
 
-  Product.create!(title: "韓國",
-    description: "韓國巧克力",
-    price: 50,
-    quantity: 25,
-    category_id: 2,
-    image: open("app/assets/images/k1.jpg")
-    )
 
   Product.create!(title: "韓國2",
     description: "韓國巧克力2",
@@ -50,4 +61,12 @@ Product.create!(title: "比利時1",
     quantity: 40,
     category_id: 2,
     image: open("app/assets/images/k2.jpg")
+    )
+
+  Product.create!(title: "日本2",
+    description: "日本巧克力2",
+    price: 40,
+    quantity: 40,
+    category_id: 2,
+    image: open("app/assets/images/j2.jpg")
     )
