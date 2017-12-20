@@ -101,9 +101,9 @@ Rails.application.configure do
     enable_starttls_auto: true  }
 
     Braintree::Configuration.environment = :sandbox
-    Braintree::Configuration.merchant_id = "8hn85ryqzgtcc86h"
-    Braintree::Configuration.public_key = "tvqmq2zqc67mskr5"
-    Braintree::Configuration.private_key = "75244bad297f542c66e88d25ed4f3c47"
+    Braintree::Configuration.merchant_id = ENV['Braintree_merchant_id']
+    Braintree::Configuration.public_key = ENV['Braintree_public_key']
+    Braintree::Configuration.private_key = ENV['Braintree_private_key']
 
     config.action_mailer.default_url_options = { host: 'https://choco-ciou.herokuapp.com' }
 
