@@ -20,6 +20,7 @@ gem 'acts_as_list'
 gem 'pry'
 
 gem "figaro"
+gem 'fog'
 gem 'braintree'
 
 gem 'aasm'
