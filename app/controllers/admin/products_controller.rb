@@ -14,6 +14,7 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.category_id = params[:category_id]
     if @product.save
       redirect_to admin_products_path, notice: "Create Success"
     else
@@ -24,10 +25,12 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @product.category_id = params[:category_id]
   end
 
   def update
     @product = Product.find(params[:id])
+    @product.category_id = params[:category_id]
     if @product.update(product_params)
       redirect_to admin_products_path, notice: "Update Success"
     else
