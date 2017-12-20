@@ -2,7 +2,12 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_cart]
 
   def index
-    @products = Product.all.order("position ASC")
+    if params[:category].blank?
+      @products = Product.all
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(:category_id => @category_id)
+    end
   end
 
   def show

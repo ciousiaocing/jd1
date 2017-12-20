@@ -27,7 +27,11 @@
     <%= f.input :image, as: :file %>
   </div>
 
-  <div class="group">
+  <div class="form-group">
+    <%= f.input :category_id, as: :select, collection: @categories, label: "類別" %>
+  </div>
+
+  <div class="group" style="margin-bottom: 30px;">
     <%= f.submit "Submit", data: { disable_with: "Submiting..."} %>
   </div>
 

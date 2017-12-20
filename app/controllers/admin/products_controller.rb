@@ -9,6 +9,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @categories = Category.all
   end
 
   def create
@@ -16,6 +17,7 @@ class Admin::ProductsController < ApplicationController
     if @product.save
       redirect_to admin_products_path, notice: "Create Success"
     else
+      @categories = Category.all
       render :new
     end
   end
@@ -29,6 +31,7 @@ class Admin::ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to admin_products_path, notice: "Update Success"
     else
+      @categories = Category.all
       render :edit
     end
   end
@@ -54,6 +57,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :quantity, :image)
+    params.require(:product).permit(:title, :description, :price, :quantity, :image, :category_id)
   end
 end
