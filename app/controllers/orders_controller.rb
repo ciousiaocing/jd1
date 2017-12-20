@@ -43,17 +43,24 @@ class OrdersController < ApplicationController
         payment_method_nonce: nonce
       )
 
-      if result
-        redirect_to order_path(@order.token), notice: "braintree完成付款"
-        @order.make_payment!
-        current_cart.clean!
+      redirect_to order_path(@order.token), notice: "braintree完成付款"
+      @order.make_payment!
+      current_cart.clean!
 
-        OrderMailer.notify_order_placed(@order).deliver_now
+      OrderMailer.notify_order_placed(@order).deliver_now
 
-      else
-        redirect_to order_path(@order.token)
-        flash[:notice] = "刷卡失敗"
-      end
+
+      # if result
+      #   redirect_to order_path(@order.token), notice: "braintree完成付款"
+      #   @order.make_payment!
+      #   current_cart.clean!
+      #
+      #   OrderMailer.notify_order_placed(@order).deliver_now
+      #
+      # else
+      #   redirect_to order_path(@order.token)
+      #   flash[:notice] = "刷卡失敗"
+      # end
     else
       redirect_to order_path(@order.token)
       flash[:notice] = "支付系統故障，請傷後再試"
