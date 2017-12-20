@@ -105,5 +105,6 @@ Rails.application.configure do
   Braintree::Configuration.public_key = ENV['Braintree_public_key']
   Braintree::Configuration.private_key = ENV['Braintree_private_key']
 
+  config.action_mailer.default_url_options = { host: 'choco-ciou.herokuapp.com' }
 
 end
