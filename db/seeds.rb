@@ -41,7 +41,7 @@ Product.create!(title: "日本1",
   description: "日本巧克力1",
   price: 50,
   quantity: 25,
-  category_id: 2,
+  category_id: 3,
   image: open("app/assets/images/j1.jpg")
   )
 
@@ -67,6 +67,6 @@ Product.create!(title: "日本1",
     description: "日本巧克力2",
     price: 40,
     quantity: 40,
-    category_id: 2,
+    category_id: 3,
     image: open("app/assets/images/j2.jpg")
     )
