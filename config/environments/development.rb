@@ -54,7 +54,7 @@ Rails.application.configure do
 
   # mailer
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.mailgun.org',
@@ -67,7 +67,7 @@ Rails.application.configure do
 
 end
 
-Braintree::Configuration.environment = :sandbox
+Braintree::Configuration.environment = "sandbox"
 Braintree::Configuration.merchant_id = ENV['Braintree::Configuration.merchant_id']
 Braintree::Configuration.public_key = ENV['Braintree::Configuration.public_key']
 Braintree::Configuration.private_key = ENV['Braintree::Configuration.private_key']
