@@ -50,6 +50,17 @@
           </li>
         <% end %>
       </ul>
+      <!-- 搜索欄 -->
+          <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
+            <div class="input-group search-box">
+              <input type="text" class="form-control" name="keyword" placeholder="<%= t('keywaods')%>" value="<%= params[:keyword] %>">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span><i class="fa fa-search"></i></span>
+                </button>
+              </div>
+            </div>
+          <% end %>
     </div>
     <!-- /.navbar-collapse -->
   </div>
