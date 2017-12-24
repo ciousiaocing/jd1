@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_cart, :collect, :discollect]
+  before_action :validate_search_key, only: [:search]
+
 
   def index
     if params[:category].blank?
