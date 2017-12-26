@@ -24,7 +24,21 @@
           <%= link_to("Products", products_path) %>
         </li>
       </ul> -->
+
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <!-- 搜索欄 -->
+          <%= form_tag search_products_path, :method => :get, class: "navbar-form" do %>
+            <div class="input-group search-box">
+              <input type="text" class="form-control" name="keyword">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span><i class="fa fa-search"></i></span>
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </li>
         <li>
           <%= link_to carts_path do %>
             購物車 <i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %> )
@@ -49,18 +63,9 @@
             </ul>
           </li>
         <% end %>
+
+
       </ul>
-      <!-- 搜索欄 -->
-          <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
-            <div class="input-group search-box">
-              <input type="text" class="form-control" name="keyword" placeholder="<%= t('keywaods')%>" value="<%= params[:keyword] %>">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
-                  <span><i class="fa fa-search"></i></span>
-                </button>
-              </div>
-            </div>
-          <% end %>
     </div>
     <!-- /.navbar-collapse -->
   </div>
